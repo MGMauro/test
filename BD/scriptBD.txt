@@ -1,0 +1,40 @@
+USE [VirtualmindDB]
+GO
+
+/****** Object:  Table [dbo].[User]    Script Date: 10/9/2018 8:04:25 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[User](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [varchar](100) NOT NULL,
+	[UserSurname] [varchar](100) NOT NULL,
+	[UserEmail] [varchar](100) NOT NULL,
+	[UserPassword] [varchar](100) NOT NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+USE [VirtualmindDB]
+GO
+
+INSERT INTO [dbo].[User]
+           ([UserName]
+           ,[UserSurname]
+           ,[UserEmail]
+           ,[UserPassword])
+     
+SELECT 'Mariana','Torres','mtorres@gmail.com', 'Password01' UNION ALL
+SELECT 'Camila','Gomez','gomezc@hotmail.com','pepe34' UNION ALL
+SELECT 'Hernan','Malfati','hernimal@yahoo.com', 'her348849'union all
+SELECT 'Jose','Pedro','josepedro@hotmail.com', '1234pass' union all
+SELECT 'Martin', 'Roldan', 'test@test.com.ar', '12345677'
+GO
+
